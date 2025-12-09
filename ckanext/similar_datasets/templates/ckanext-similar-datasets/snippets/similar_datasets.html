@@ -20,6 +20,28 @@ Example:
 
 #}
 
+{#
+
+Sidebar-block with a list of similar datasets.
+
+
+Parameters:
+
+    id: ID of the package for which similar datasets should be listed. This
+        must be the actual ID, passing the name is not supported.
+
+    max_num: Maximum number of datasets to list. Defaults to the value of the
+        configuration option ``ckanext.similar_datasets.max_num`` or
+        5 if that option is not set.
+
+Example:
+
+    {% snippet 'ckanext-similar-datasets/snippets/similar_datasets.html',
+               id=c.pkg_dict.id,
+               max_num=3 %}
+
+#}
+
 {% set max_num = max_num or h.similar_datasets_get_config('similar_datasets.max_num', 5)|int %}
 {% set pkg_dicts = h.similar_datasets(id, max_num=max_num) %}
 
@@ -50,4 +72,3 @@ Example:
     {% block without_results %}
     {% endblock %}
 {% endif %}
-

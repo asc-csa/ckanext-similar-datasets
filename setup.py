@@ -10,7 +10,7 @@ from setuptools import setup, find_packages  # Always prefer setuptools over dis
 HERE = os.path.abspath(os.path.dirname(__file__))
 
 # Get the long description from the relevant file
-with codecs.open(os.path.join(HERE, 'README.rst'), encoding='utf-8') as f:
+with codecs.open(os.path.join(HERE, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
@@ -23,6 +23,7 @@ setup(
 
     description='''Show similar datasets in detailview''',
     long_description=long_description,
+    long_description_content_type='text/markdown',
 
     # The project's main homepage.
     # url='https://github.com/stadt-karlsruhe/ckanext-discovery',
